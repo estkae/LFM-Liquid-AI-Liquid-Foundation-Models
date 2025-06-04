@@ -1,3 +1,5 @@
-torch
+loguru
+tqdm
+numpy
 zetascale
 swarms
