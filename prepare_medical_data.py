@@ -24,8 +24,13 @@ logger = logging.getLogger(__name__)
 class MedicalDataProcessor:
     """Process and prepare medical datasets for training"""
     
-    def __init__(self, tokenizer_name: str = "liquid/lfm-3b"):
-        self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
+    def __init__(self, tokenizer_name: str = "meta-llama/Llama-2-7b-hf"):
+        try:
+            self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
+        except:
+            # Fallback to a widely available tokenizer
+            logger.warning(f"Could not load {tokenizer_name}, falling back to gpt2")
+            self.tokenizer = AutoTokenizer.from_pretrained("gpt2")
         self.medical_abbreviations = self._load_medical_abbreviations()
         self.privacy_patterns = self._create_privacy_patterns()
         
@@ -444,8 +449,30 @@ class MedicalDataProcessor:
 
 def main():
     """Example usage of the medical data processor"""
-    processor = MedicalDataProcessor()
+    import argparse
     
+    parser = argparse.ArgumentParser(description='Prepare medical data for LFM training')
+    parser.add_argument('--input_dir', type=str, help='Directory containing raw medical data')
+    parser.add_argument('--output_file', type=str, default='train_medical.jsonl', 
+                       help='Output JSONL file path')
+    parser.add_argument('--specialties', type=str, default='all',
+                       help='Comma-separated list of medical specialties to include')
+    parser.add_argument('--min_confidence', type=float, default=0.8,
+                       help='Minimum confidence threshold for data quality')
+    parser.add_argument('--tokenizer', type=str, default='gpt2',
+                       help='Tokenizer to use (default: gpt2)')
+    
+    args = parser.parse_args()
+    
+    # Initialize processor with specified tokenizer
+    processor = MedicalDataProcessor(tokenizer_name=args.tokenizer)
+    
+    # If no input directory is provided, run demo mode
+    if not args.input_dir:
+        logger.info("No input directory provided. Running in demo mode...")
+        logger.info("Use --input_dir to process actual medical data")
+        logger.info("")
+        
     # Example: Process clinical notes
     clinical_notes = [
         {
