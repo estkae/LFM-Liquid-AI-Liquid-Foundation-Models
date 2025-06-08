@@ -93,7 +93,7 @@ class MedicalDataProcessor:
         """Remove or replace PHI from medical text"""
         # Replace detected PHI with tokens
         for pattern in self.privacy_patterns:
-            if pattern.pattern.lower().contains('name'):
+            if 'name' in pattern.pattern.lower():
                 text = pattern.sub('[NAME]', text)
             elif 'date' in pattern.pattern.lower() or '/' in pattern.pattern:
                 text = pattern.sub('[DATE]', text)
