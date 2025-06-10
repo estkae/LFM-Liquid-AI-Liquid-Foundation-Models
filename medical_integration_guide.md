@@ -36,20 +36,16 @@ python prepare_medical_data.py \
 ```bash
 # Schritt 2.1: LFM-3B Model laden
 python -c "
-from lfm.model import LFModel
-from lfm.config import LFMConfig
+from lfm.model_v2 import LFMModel
+from lfm.config import get_config
 
 # Basis-Konfiguration für LFM-3B
-config = LFMConfig(
-    hidden_dim=3072,
-    num_layers=32,
-    num_experts=8,  # Standard MoE
-    model_size='3B'
-)
+config = get_config('LFM-3B')
 
 # Model initialisieren
-model = LFModel(config)
-print(f'Model loaded: {model.get_num_params():,} parameters')
+model = LFMModel(config)
+param_count = sum(p.numel() for p in model.parameters())
+print(f'Model loaded: {param_count:,} parameters')
 "
 
 # Schritt 2.2: Checkpoint herunterladen (falls vorhanden)
@@ -109,14 +105,16 @@ python train_medical_lfm.py \
 ```python
 # test_medical_integration.py
 import torch
-from lfm.model_v2 import LFModel
+from lfm.model_v2 import LFMModel
 from lfm.medical_moe import MedicalMoE
+from lfm.config import get_config
+
+# Medical Config erstellen
+config = get_config("LFM-3B")
+config.num_experts = 12  # Medical experts
 
 # Model mit Medical MoE laden
-model = LFModel.from_pretrained(
-    "medical_checkpoints/best_model",
-    use_medical_moe=True
-)
+model = LFMModel(config)
 
 # Test-Beispiel
 test_input = """
