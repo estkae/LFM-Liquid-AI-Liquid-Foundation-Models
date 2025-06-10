@@ -56,17 +56,26 @@ print(f'Model loaded: {param_count:,} parameters')
 
 ```python
 # config_medical_model.py
-from lfm.config import LFMConfig
-from lfm.medical_moe import MedicalMoE
+from lfm.config import LFMConfig, get_config
+from dataclasses import dataclass
+from typing import List
 
-# Medical-spezifische Konfiguration
-medical_config = LFMConfig(
-    hidden_dim=3072,
-    num_layers=32,
-    num_experts=12,  # 12 medizinische Experten
-    num_experts_per_token=2,  # Kann auf 4 erhöht werden bei Urgency
-    model_size='3B',
-    # Medical-spezifische Parameter
+@dataclass
+class MedicalConfig:
+    """Extended configuration for medical-specific features"""
+    base_config: LFMConfig
+    medical_specialties: List[str]
+    use_safety_gates: bool = True
+    confidence_threshold: float = 0.85
+    evidence_extraction: bool = True
+
+# Option 1: Basierend auf vordefinierter Konfiguration
+base_config = get_config("LFM-3B")
+base_config.num_experts = 12  # 12 medizinische Experten
+base_config.model_name = "LFM-3B-Medical"
+
+medical_config = MedicalConfig(
+    base_config=base_config,
     medical_specialties=[
         'cardiology', 'neurology', 'oncology', 'radiology',
         'pathology', 'pharmacology', 'emergency', 'pediatrics',
