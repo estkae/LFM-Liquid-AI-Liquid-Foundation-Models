@@ -102,19 +102,25 @@ class LFM3BWithTokenizer:
         print(f"\n🔤 Prompt: '{prompt}'")
         print(f"   Token IDs: {input_ids.shape}")
         
-        # Generate
+        # Generate (nur unterstützte Parameter verwenden)
         with torch.no_grad():
+            if num_return_sequences > 1:
+                # Für mehrere Sequenzen Input wiederholen
+                input_ids = input_ids.repeat(num_return_sequences, 1)
+            
+            # Sichere Token IDs
+            pad_id = self.tokenizer.pad_token_id if self.tokenizer.pad_token_id is not None else 0
+            eos_id = self.tokenizer.eos_token_id if self.tokenizer.eos_token_id is not None else 2
+            
             outputs = self.model.generate(
                 input_ids=input_ids,
-                attention_mask=attention_mask,
                 max_length=max_length,
                 temperature=temperature,
                 top_k=top_k,
                 top_p=top_p,
                 do_sample=do_sample,
-                num_return_sequences=num_return_sequences,
-                pad_token_id=self.tokenizer.pad_token_id,
-                eos_token_id=self.tokenizer.eos_token_id,
+                pad_token_id=pad_id,
+                eos_token_id=eos_id,
             )
         
         # Decode
