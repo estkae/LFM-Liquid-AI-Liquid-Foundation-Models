@@ -1,103 +1,98 @@
-# LFM_3B - Liquid Neural Network Implementation
+# LFM-3B: Liquid Foundation Model (3 Billion Parameters)
 
-This directory contains an implementation of Liquid Neural Networks (LNN) based on reservoir computing principles, designed for the LFM_3B model.
+## Overview
 
-## Directory Structure
+LFM-3B is a 3-billion parameter language model that combines transformer architecture with Liquid Neural Networks (LNN) for enhanced dynamic processing and adaptation capabilities. The model integrates:
 
-```
-LFM_3B/
-├── lnn/
-│   ├── __init__.py      # Package initialization
-│   ├── model.py         # LiquidNeuralNetwork class implementation
-│   └── utils.py         # Utility functions for weight initialization, training, and prediction
-└── train_mnist_lnn.py   # Example training script using MNIST dataset
-```
+- **Transformer Architecture**: Multi-head attention with Rotary Position Embeddings (RoPE)
+- **Liquid Neural Networks**: Dynamic reservoir computing integrated at regular intervals
+- **Mixture of Experts (MoE)**: Sparse activation with top-k routing for efficiency
+- **Medical Mode**: Special safety features for medical applications
 
-## Features
+## Architecture Details
 
-- **Liquid Neural Network (LNN)** implementation with reservoir computing
-- Efficient training using ridge regression for output weights
-- Support for classification tasks
-- Hyperparameter tuning capabilities
-- MNIST dataset example with multiple experiments
+### Model Configuration
+- **Parameters**: ~3 billion
+- **Hidden Size**: 3072
+- **Layers**: 20
+- **Attention Heads**: 24
+- **Experts**: 8 (2 active per token)
+- **Vocabulary**: 128,256 tokens
+- **Context Length**: 8,192 tokens
+
+### Key Components
+
+1. **Liquid Layers**: Integrated every 4 transformer layers
+   - 3 parallel reservoirs per layer
+   - 512 units per reservoir
+   - Sparse connectivity (10%)
+   - Leak rate: 0.3
+
+2. **Mixture of Experts**
+   - 8 expert networks per layer
+   - Top-2 routing
+   - Load balancing auxiliary loss
+
+3. **Attention Mechanism**
+   - Grouped Query Attention (GQA) support
+   - RoPE for position encoding
+   - Flash attention compatible
 
 ## Installation
 
 ```bash
-pip install numpy tensorflow
+pip install torch numpy
 ```
 
-## Quick Start
+## Usage
 
 ```python
-from lnn import LiquidNeuralNetwork
-import numpy as np
+from LFM_3B import LFM3BConfig, LFM3BForCausalLM
+import torch
 
-# Create model
-model = LiquidNeuralNetwork(
-    input_dim=784,
-    reservoir_dim=1000,
-    output_dim=10,
-    leak_rate=0.1,
-    spectral_radius=0.9
+# Initialize model
+config = LFM3BConfig()
+model = LFM3BForCausalLM(config)
+
+# Generate text
+input_ids = torch.tensor([[1, 2, 3, 4, 5]])  # Your tokenized input
+output = model.generate(
+    input_ids=input_ids,
+    max_length=100,
+    temperature=0.8,
+    do_sample=True
 )
-
-# Train model
-model.fit(X_train, y_train, num_epochs=10)
-
-# Make predictions
-predictions = model.predict_classes(X_test)
-accuracy = model.score(X_test, y_test)
 ```
 
-## Key Components
+## Medical Mode
 
-### LiquidNeuralNetwork Class
+For medical applications, enable safety features:
 
-The main model class with methods:
-- `fit()`: Train the model
-- `predict()`: Get raw predictions
-- `predict_proba()`: Get probability predictions
-- `predict_classes()`: Get class labels
-- `score()`: Calculate accuracy
-
-### Hyperparameters
-
-- `input_dim`: Input feature dimension
-- `reservoir_dim`: Number of reservoir neurons (hidden layer)
-- `output_dim`: Number of output classes
-- `leak_rate`: Controls the "memory" of the reservoir (0 < leak_rate ≤ 1)
-- `spectral_radius`: Controls the dynamics of the reservoir
-- `num_epochs`: Number of training iterations
-
-## Example Usage
-
-Run the MNIST training example:
-
-```bash
-cd LFM_3B
-python train_mnist_lnn.py
+```python
+config = LFM3BConfig(
+    medical_mode=True,
+    medical_safety_threshold=0.85
+)
 ```
 
-This will:
-1. Train a baseline model on MNIST
-2. Run experiments with different hyperparameter configurations
-3. Compare performance across different settings
+## Model Features
 
-## Performance Notes
+- **Dynamic Adaptation**: Liquid layers provide temporal dynamics
+- **Efficient Scaling**: MoE enables sparse computation
+- **Interpretability**: Evidence extraction from liquid states
+- **Safety Features**: Medical mode with uncertainty estimation
 
-The implementation includes several optimizations:
-- Ridge regression for stable output weight training
-- Efficient matrix operations using NumPy
-- Regularization for numerical stability
+## Training
 
-## Improving Performance
+The model supports standard language modeling objectives:
+- Next token prediction
+- Causal language modeling
+- Auxiliary load balancing loss for MoE
 
-To improve accuracy beyond the baseline ~35%:
+## Future Enhancements
 
-1. **Increase reservoir size**: Try 2000-5000 neurons
-2. **Tune leak rate**: Experiment with values between 0.05-0.5
-3. **Adjust spectral radius**: Try values between 0.8-1.5
-4. **Add input scaling**: Normalize or standardize input features
-5. **Use ensemble methods**: Combine multiple LNN models
-6. **Add regularization**: Adjust the regularization parameter in training
+- [ ] Integration with tokenizers (HuggingFace compatible)
+- [ ] Distributed training support
+- [ ] RLHF/DPO fine-tuning
+- [ ] Quantization support
+- [ ] Model checkpointing utilities
