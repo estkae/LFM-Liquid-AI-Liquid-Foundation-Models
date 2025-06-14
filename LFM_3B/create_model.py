@@ -4,9 +4,15 @@ Script zum Erstellen und Speichern eines LFM-3B Modells
 """
 
 import torch
-from config import LFM3BConfig
-from model import LFM3BForCausalLM
-from utils import save_model, print_model_summary
+import sys
+import os
+
+# Add the parent directory to Python path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from LFM_3B.config import LFM3BConfig
+from LFM_3B.model import LFM3BForCausalLM
+from LFM_3B.utils import save_model, print_model_summary
 import argparse
 
 

@@ -1,0 +1,15 @@
+{
+  "total_entries": 5,
+  "specialties": {
+    "cardiology": 1,
+    "radiology": 1,
+    "pediatrics": 1,
+    "psychiatry": 1,
+    "gastroenterology": 1
+  },
+  "urgency_levels": {
+    "high": 2,
+    "medium": 2,
+    "low": 1
+  }
+}

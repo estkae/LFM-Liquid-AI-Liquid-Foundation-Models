@@ -7,8 +7,13 @@ import json
 import os
 from pathlib import Path
 from typing import Dict, Optional, Union
-from .config import LFM3BConfig
-from .model import LFM3BForCausalLM, LFM3BModel
+
+try:
+    from .config import LFM3BConfig
+    from .model import LFM3BForCausalLM, LFM3BModel
+except ImportError:
+    from config import LFM3BConfig
+    from model import LFM3BForCausalLM, LFM3BModel
 
 
 def save_model(

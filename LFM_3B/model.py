@@ -5,7 +5,10 @@ from typing import Optional, Tuple, List, Union
 import math
 from dataclasses import dataclass
 
-from .config import LFM3BConfig
+try:
+    from .config import LFM3BConfig
+except ImportError:
+    from config import LFM3BConfig
 
 
 @dataclass
