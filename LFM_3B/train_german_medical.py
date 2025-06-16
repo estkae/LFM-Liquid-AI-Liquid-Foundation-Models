@@ -19,6 +19,38 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from LFM_3B.utils import load_model, save_model
 from LFM_3B.model import LFM3BForCausalLM
 from lfm.medical_health_base import MedicalHealthBaseModel
+from pathlib import Path
+from dataclasses import fields
+
+
+def save_medical_model(model, save_directory):
+    """Save MedicalHealthBaseModel with proper config filtering"""
+    save_directory = Path(save_directory)
+    save_directory.mkdir(parents=True, exist_ok=True)
+    
+    # Get config
+    config = model.config
+    
+    # Save only the valid dataclass fields for MedicalHealthConfig
+    from lfm.medical_health_base import MedicalHealthConfig
+    valid_fields = {f.name for f in fields(MedicalHealthConfig)}
+    
+    # Create filtered config dict
+    config_dict = {k: v for k, v in config.__dict__.items() if k in valid_fields}
+    
+    # Save medical config
+    with open(save_directory / "medical_config.json", "w") as f:
+        json.dump(config_dict, f, indent=2)
+    
+    # Save model weights
+    try:
+        from safetensors.torch import save_file
+        state_dict = model.state_dict()
+        save_file(state_dict, save_directory / "model.safetensors")
+    except ImportError:
+        torch.save(model.state_dict(), save_directory / "pytorch_model.bin")
+    
+    print(f"Medical model saved to {save_directory}")
 
 
 class GermanMedicalDataset(Dataset):
@@ -154,7 +186,17 @@ def train_model(
         
         # Create model from config
         from lfm.medical_health_base import MedicalHealthConfig, MedicalHealthBaseModel
-        config = MedicalHealthConfig(**{k: v for k, v in config_dict.items() if not k.startswith('_')})
+        
+        # Get valid field names for MedicalHealthConfig
+        valid_fields = {f.name for f in fields(MedicalHealthConfig)}
+        
+        # Filter config_dict to only include valid fields
+        filtered_config = {k: v for k, v in config_dict.items() if k in valid_fields}
+        
+        logger.info(f"Valid fields: {valid_fields}")
+        logger.info(f"Filtered config keys: {list(filtered_config.keys())}")
+        
+        config = MedicalHealthConfig(**filtered_config)
         model = MedicalHealthBaseModel(config)
         
         # Load weights
@@ -242,12 +284,12 @@ def train_model(
         
         # Speichere Checkpoint
         checkpoint_dir = f"{output_dir}/checkpoint-epoch-{epoch+1}"
-        save_model(model, checkpoint_dir)
+        save_medical_model(model, checkpoint_dir)
         logger.info(f"✅ Checkpoint gespeichert: {checkpoint_dir}")
     
     # Finales Modell speichern
     final_dir = f"{output_dir}/final"
-    save_model(model, final_dir)
+    save_medical_model(model, final_dir)
     logger.info(f"✅ Finales Modell gespeichert: {final_dir}")
 
 
