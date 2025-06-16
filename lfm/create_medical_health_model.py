@@ -10,10 +10,10 @@ import argparse
 from pathlib import Path
 
 # Add paths
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'LFM_3B'))
 
-from medical_health_base import create_medical_health_model, MedicalHealthConfig
+from lfm.medical_health_base import create_medical_health_model, MedicalHealthConfig
 from LFM_3B.utils import save_model, print_model_summary
 
 

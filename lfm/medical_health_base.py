@@ -14,6 +14,7 @@ import sys
 import os
 
 # Import from existing modules
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from lfm.config import LFMConfig
 from lfm.medical_moe import MedicalConfig, MedicalMoE, MedicalExpert, MedicalRouter
 
