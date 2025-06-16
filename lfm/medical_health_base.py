@@ -468,6 +468,12 @@ def create_medical_health_model(
     
     configs = {
         "tiny": MedicalHealthConfig(
+            model_name="medical-health-tiny",
+            hidden_dim=512,
+            num_layers=8,
+            num_heads=8,
+            head_dim=64,
+            intermediate_dim=1024,
             hidden_size=512,
             num_hidden_layers=8,
             num_attention_heads=8,
@@ -476,6 +482,12 @@ def create_medical_health_model(
             **kwargs
         ),
         "small": MedicalHealthConfig(
+            model_name="medical-health-small",
+            hidden_dim=1024,
+            num_layers=12,
+            num_heads=16,
+            head_dim=64,
+            intermediate_dim=2048,
             hidden_size=1024,
             num_hidden_layers=12,
             num_attention_heads=16,
@@ -484,6 +496,12 @@ def create_medical_health_model(
             **kwargs
         ),
         "base": MedicalHealthConfig(
+            model_name="medical-health-base",
+            hidden_dim=2048,
+            num_layers=24,
+            num_heads=16,
+            head_dim=128,
+            intermediate_dim=5120,
             hidden_size=2048,
             num_hidden_layers=24,
             num_attention_heads=16,
@@ -491,6 +509,12 @@ def create_medical_health_model(
             **kwargs
         ),
         "large": MedicalHealthConfig(
+            model_name="medical-health-large",
+            hidden_dim=3072,
+            num_layers=32,
+            num_heads=24,
+            head_dim=128,
+            intermediate_dim=8192,
             hidden_size=3072,
             num_hidden_layers=32,
             num_attention_heads=24,
