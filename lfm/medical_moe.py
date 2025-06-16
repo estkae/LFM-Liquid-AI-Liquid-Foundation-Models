@@ -28,7 +28,9 @@ class MedicalConfig(LFMConfig):
     specialty_expert_mapping: Dict[str, List[int]] = None
     
     def __post_init__(self):
-        super().__post_init__()
+        # Initialize parent if it has __post_init__
+        if hasattr(super(), '__post_init__'):
+            super().__post_init__()
         
         if self.medical_specialties is None:
             self.medical_specialties = [

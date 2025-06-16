@@ -85,7 +85,9 @@ class MedicalHealthConfig(MedicalConfig):
         self.n_heads = self.num_attention_heads
         self.n_experts_per_tok = 3  # Use 3 experts for medical decisions
         
-        super().__post_init__()
+        # Initialize parent if it has __post_init__
+        if hasattr(super(), '__post_init__'):
+            super().__post_init__()
 
 
 class HealthExpert(MedicalExpert):
