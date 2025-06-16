@@ -85,6 +85,16 @@ class MedicalHealthConfig(MedicalConfig):
         self.n_heads = self.num_attention_heads
         self.n_experts_per_tok = 3  # Use 3 experts for medical decisions
         
+        # Liquid Neural Network attributes (for compatibility with print_model_summary)
+        self.use_liquid_layers = False
+        self.liquid_num_reservoirs = 4
+        self.liquid_reservoir_size = 256
+        self.liquid_update_interval = 4
+        
+        # MoE attributes (for compatibility with print_model_summary)
+        self.num_experts = self.num_medical_experts
+        self.num_experts_per_token = self.n_experts_per_tok
+        
         # Initialize parent if it has __post_init__
         if hasattr(super(), '__post_init__'):
             super().__post_init__()
