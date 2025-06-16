@@ -18,6 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from LFM_3B.utils import load_model, save_model
 from LFM_3B.model import LFM3BForCausalLM
+from lfm.medical_health_base import MedicalHealthBaseModel
 
 
 class GermanMedicalDataset(Dataset):
@@ -141,7 +142,19 @@ def train_model(
     
     # Lade Modell
     logger.info(f"Lade Modell von: {model_path}")
-    model = load_model(LFM3BForCausalLM, model_path)
+    
+    # Check if it's a medical model
+    config_path = os.path.join(model_path, "medical_config.json")
+    if os.path.exists(config_path):
+        # Load Medical Health Model
+        logger.info("📋 Lade Medical Health Model")
+        model = torch.load(os.path.join(model_path, "model.pt"), map_location=device)
+        if hasattr(model, 'module'):
+            model = model.module
+    else:
+        # Load standard LFM3B model
+        model = load_model(LFM3BForCausalLM, model_path)
+    
     model = model.to(device)
     model.train()
     
