@@ -148,9 +148,29 @@ def train_model(
     if os.path.exists(config_path):
         # Load Medical Health Model
         logger.info("📋 Lade Medical Health Model")
-        model = torch.load(os.path.join(model_path, "model.pt"), map_location=device)
-        if hasattr(model, 'module'):
-            model = model.module
+        # Load config
+        with open(config_path, 'r') as f:
+            config_dict = json.load(f)
+        
+        # Create model from config
+        from lfm.medical_health_base import MedicalHealthConfig, MedicalHealthBaseModel
+        config = MedicalHealthConfig(**{k: v for k, v in config_dict.items() if not k.startswith('_')})
+        model = MedicalHealthBaseModel(config)
+        
+        # Load weights
+        weights_path = os.path.join(model_path, "pytorch_model.bin")
+        if os.path.exists(weights_path):
+            state_dict = torch.load(weights_path, map_location=device)
+            model.load_state_dict(state_dict)
+        else:
+            # Try safetensors
+            weights_path = os.path.join(model_path, "model.safetensors")
+            if os.path.exists(weights_path):
+                from safetensors.torch import load_file
+                state_dict = load_file(weights_path)
+                model.load_state_dict(state_dict)
+            else:
+                raise FileNotFoundError(f"No model weights found in {model_path}")
     else:
         # Load standard LFM3B model
         model = load_model(LFM3BForCausalLM, model_path)
