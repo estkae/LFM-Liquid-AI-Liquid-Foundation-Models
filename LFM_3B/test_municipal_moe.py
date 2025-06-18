@@ -50,6 +50,7 @@ def test_expert_routing():
         vocab_size=1000,
         hidden_size=128,
         num_hidden_layers=1,
+        num_attention_heads=4,  # Must divide hidden_size evenly
         num_experts=8,
         num_experts_per_tok=2
     )
