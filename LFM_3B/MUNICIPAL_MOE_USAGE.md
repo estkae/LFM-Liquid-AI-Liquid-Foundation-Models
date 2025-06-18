@@ -76,20 +76,35 @@ python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_base \
   --prompt "Wie beantrage ich einen Reisepass?" --max-length 200 --temperature 0.7
 ```
 
-## 🔧 Training mit eigenen Daten
+## 🔧 Training mit deutschen Verwaltungsdaten
 
-Falls Sie das Modell mit eigenen kommunalen Daten trainieren möchten:
+Das Basis-Modell muss erst mit deutschen Texten trainiert werden:
 
-1. Trainingsdaten erstellen:
+### 1. Trainingsdaten erstellen
 ```bash
-python3 train_german_municipal.py --create-sample-data municipal_data.jsonl
+python3 train_municipal_moe.py --create-data
+```
+Erstellt `municipal_training_data.jsonl` mit ~75 deutschen Verwaltungsbeispielen.
+
+### 2. Modell trainieren
+```bash
+python3 train_municipal_moe.py --model-path ./municipal_moe_base \
+  --data-file municipal_training_data.jsonl \
+  --output-dir ./municipal_moe_trained \
+  --epochs 3 --batch-size 4
 ```
 
-2. Modell trainieren:
+### 3. Trainiertes Modell verwenden
 ```bash
-python3 train_german_municipal.py --model-path ./municipal_moe_base \
-  --data-file municipal_data.jsonl --output-dir ./municipal_moe_finetuned
+# Nach dem Training das trainierte Modell nutzen:
+python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_trained --chat
 ```
+
+### Training-Parameter
+- `--epochs`: Anzahl Trainingsdurchläufe (Standard: 3)
+- `--batch-size`: Batch-Größe (Standard: 4, bei wenig GPU-Speicher reduzieren)
+- `--learning-rate`: Lernrate (Standard: 5e-5)
+- `--max-length`: Maximale Textlänge (Standard: 256)
 
 ## 📊 Modell-Details
 - **Basis**: GPT-2 Tokenizer
