@@ -57,25 +57,50 @@ class MunicipalTokenizerIntegration:
         generated_text = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
         return generated_text
     
-    def generate_step_by_step(self, input_ids: torch.Tensor, max_new_tokens: int = 50) -> torch.Tensor:
-        """Generate tokens step by step (since model doesn't have built-in generate)"""
+    def generate_step_by_step(self, input_ids: torch.Tensor, max_new_tokens: int = 50, temperature: float = 0.8, top_p: float = 0.9) -> torch.Tensor:
+        """Generate tokens step by step with better sampling"""
         generated = input_ids
+        prompt_length = input_ids.shape[1]
         
-        for _ in range(max_new_tokens):
+        for i in range(max_new_tokens):
             with torch.no_grad():
                 outputs = self.model(input_ids=generated)
-                logits = outputs["logits"]
+                logits = outputs["logits"][:, -1, :]  # Get last token logits
                 
-                # Get next token probabilities
-                next_token_logits = logits[:, -1, :]
-                next_token = torch.multinomial(torch.softmax(next_token_logits, dim=-1), 1)
+                # Apply temperature
+                logits = logits / temperature
+                
+                # Apply top-p (nucleus sampling)
+                if top_p < 1.0:
+                    sorted_logits, sorted_indices = torch.sort(logits, descending=True)
+                    cumulative_probs = torch.cumsum(torch.softmax(sorted_logits, dim=-1), dim=-1)
+                    
+                    # Remove tokens with cumulative probability above the threshold
+                    sorted_indices_to_remove = cumulative_probs > top_p
+                    sorted_indices_to_remove[..., 1:] = sorted_indices_to_remove[..., :-1].clone()
+                    sorted_indices_to_remove[..., 0] = 0
+                    
+                    # Scatter to original order
+                    indices_to_remove = sorted_indices_to_remove.scatter(1, sorted_indices, sorted_indices_to_remove)
+                    logits[indices_to_remove] = float('-inf')
+                
+                # Sample next token
+                probs = torch.softmax(logits, dim=-1)
+                next_token = torch.multinomial(probs, 1)
                 
                 # Append to generated sequence
                 generated = torch.cat([generated, next_token], dim=1)
                 
-                # Stop if EOS token is generated
-                if next_token.item() == self.tokenizer.eos_token_id:
+                # Stop conditions
+                if (next_token.item() == self.tokenizer.eos_token_id or 
+                    next_token.item() in [self.tokenizer.encode('.')[0], self.tokenizer.encode('?')[0], self.tokenizer.encode('!')[0]]):
                     break
+                
+                # Also stop if generating too much repetition
+                if i > 10:
+                    recent_tokens = generated[0, -10:].tolist()
+                    if len(set(recent_tokens)) < 3:  # Too repetitive
+                        break
         
         return generated
     
