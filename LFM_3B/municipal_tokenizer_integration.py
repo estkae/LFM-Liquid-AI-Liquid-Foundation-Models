@@ -91,10 +91,15 @@ class MunicipalTokenizerIntegration:
                 # Append to generated sequence
                 generated = torch.cat([generated, next_token], dim=1)
                 
-                # Stop conditions
-                if (next_token.item() == self.tokenizer.eos_token_id or 
-                    next_token.item() in [self.tokenizer.encode('.')[0], self.tokenizer.encode('?')[0], self.tokenizer.encode('!')[0]]):
+                # Stop conditions - be more lenient to allow longer responses
+                if next_token.item() == self.tokenizer.eos_token_id:
                     break
+                
+                # Only stop on sentence endings after some minimum generation
+                if i > 20:  # Generate at least 20 tokens
+                    token_text = self.tokenizer.decode(next_token[0])
+                    if token_text in ['.', '!', '?'] and i > 30:
+                        break
                 
                 # Also stop if generating too much repetition
                 if i > 10:
@@ -244,13 +249,31 @@ def main():
     elif args.prompt:
         print(f"\n📝 Prompt: {args.prompt}")
         
-        # Generate response
+        # Generate response with better parameters
         inputs = integrator.tokenizer(args.prompt, return_tensors="pt").to(integrator.device)
-        generated = integrator.generate_step_by_step(inputs.input_ids, max_new_tokens=args.max_length)
+        
+        # Use different parameters for better generation
+        generated = integrator.generate_step_by_step(
+            inputs.input_ids, 
+            max_new_tokens=min(args.max_length, 150),  # Allow more tokens
+            temperature=0.7,  # Slightly more focused
+            top_p=0.9
+        )
         
         # Decode and display
-        response = integrator.tokenizer.decode(generated[0], skip_special_tokens=True)
-        print(f"💬 Generated: {response}")
+        full_response = integrator.tokenizer.decode(generated[0], skip_special_tokens=True)
+        
+        # Only show the generated part (after the prompt)
+        prompt_text = args.prompt
+        if full_response.startswith(prompt_text):
+            generated_part = full_response[len(prompt_text):].strip()
+            if generated_part:
+                print(f"💬 Generated: {prompt_text}")
+                print(f"             {generated_part}")
+            else:
+                print(f"💬 Generated: {full_response}")
+        else:
+            print(f"💬 Generated: {full_response}")
     else:
         print("❌ Please specify --prompt, --municipal-demo, --chat, or --analyze-routing")
         parser.print_help()
