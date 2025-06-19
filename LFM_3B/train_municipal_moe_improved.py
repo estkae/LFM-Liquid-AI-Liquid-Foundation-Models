@@ -86,15 +86,32 @@ def train_model(
     batch_size: int = 2,  # Smaller batch size
     learning_rate: float = 3e-4,  # Higher learning rate
     max_length: int = 256,
-    gradient_accumulation_steps: int = 4
+    gradient_accumulation_steps: int = 4,
+    resume_from_checkpoint: str = None
 ):
     """Train the Municipal MoE model with improved settings"""
     
     print("🏛️ Starting improved Municipal MoE training...")
     
     # Load model and tokenizer
-    print(f"📂 Loading model from {model_path}")
-    model = MunicipalMoEModel.from_pretrained(model_path)
+    if resume_from_checkpoint:
+        print(f"🔄 Resuming training from checkpoint: {resume_from_checkpoint}")
+        checkpoint_path = Path(output_dir) / resume_from_checkpoint
+        if not checkpoint_path.exists():
+            print(f"❌ Checkpoint not found: {checkpoint_path}")
+            print("Available checkpoints:")
+            output_path = Path(output_dir)
+            if output_path.exists():
+                checkpoints = [d.name for d in output_path.iterdir() if d.is_dir() and d.name.startswith("checkpoint-")]
+                for cp in sorted(checkpoints):
+                    print(f"  - {cp}")
+            return
+        model = MunicipalMoEModel.from_pretrained(checkpoint_path)
+        print(f"✅ Loaded model from checkpoint: {checkpoint_path}")
+    else:
+        print(f"📂 Loading base model from {model_path}")
+        model = MunicipalMoEModel.from_pretrained(model_path)
+    
     tokenizer = AutoTokenizer.from_pretrained("gpt2")
     tokenizer.pad_token = tokenizer.eos_token
     
@@ -294,6 +311,8 @@ def main():
                         help="Maximum sequence length")
     parser.add_argument("--gradient-accumulation-steps", type=int, default=4,
                         help="Gradient accumulation steps")
+    parser.add_argument("--resume-from-checkpoint", type=str, default=None,
+                        help="Resume training from checkpoint (e.g., checkpoint-1000)")
     
     args = parser.parse_args()
     
@@ -312,7 +331,8 @@ def main():
         batch_size=args.batch_size,
         learning_rate=args.learning_rate,
         max_length=args.max_length,
-        gradient_accumulation_steps=args.gradient_accumulation_steps
+        gradient_accumulation_steps=args.gradient_accumulation_steps,
+        resume_from_checkpoint=args.resume_from_checkpoint
     )
 
 
