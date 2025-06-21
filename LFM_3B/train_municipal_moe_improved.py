@@ -120,13 +120,16 @@ def train_model(
     model.to(device)
     print(f"🖥️ Training on {device}")
     
-    # Create dataset and dataloader
+    # Create dataset and dataloader with speed optimizations
     dataset = MunicipalDataset(data_file, tokenizer, max_length)
     dataloader = DataLoader(
         dataset, 
         batch_size=batch_size, 
         shuffle=True,
-        drop_last=True  # Drop last incomplete batch
+        drop_last=True,  # Drop last incomplete batch
+        num_workers=4,  # Parallel data loading
+        pin_memory=True if device.type == 'cuda' else False,  # Faster GPU transfer
+        prefetch_factor=2  # Prefetch batches
     )
     
     # Setup optimizer with weight decay
