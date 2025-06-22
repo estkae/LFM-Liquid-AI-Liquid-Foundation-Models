@@ -331,8 +331,85 @@ Die wichtigsten Punkte zusammengefasst:
   # Das hat echte medizinische Experten!
 
   Zusammenfassung:
-  - train_german_medical.py = Trainiert vorhandenes Modell auf Deutsch
+  - cd = Trainiert vorhandenes Modell auf Deutsch
   - create_medical_health_model.py = Erstellt neues Medical MoE Model mit 12 Experten
 
   Das Script zeigt dir genau, welche MoE-Layer dein Modell hat!
+
+  python LFM_3B/municipal_moe_model.py
+
+  Das erstellt automatisch ein Basis-MoE-Modell im Ordner ./municipal_moe_base
+
+  Alternativ über das Training-Script:
+
+  # Basis-Modell erstellen
+  python LFM_3B/train_german_municipal.py --create-base-model
+
+  # Trainingsdaten erstellen
+  python LFM_3B/train_german_municipal.py --create-sample-data municipal_data.jsonl
+
+  # Training starten
+  python LFM_3B/train_german_municipal.py \
+      --model-path ./municipal_moe_base \
+      --data-file municipal_data.jsonl
+
+  Tests ausführen:
+
+  python LFM_3B/test_municipal_moe.py
+
+   ✅ Push successful! The Municipal MoE model files have been uploaded to GitHub:
+
+  - municipal_moe_model.py - MoE architecture with 8 specialized experts
+  - train_german_municipal.py - Training script for municipal data
+  - test_municipal_moe.py - Test suite
+
+   2. MUNICIPAL_MOE_USAGE.md - Detaillierte Anleitung mit allen Befehlen
+
+  Die Nutzung ist analog zum Medical Model:
+
+  # Modell testen
+  python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_base --prompt "Personalausweis
+  beantragen"
+
+  # Demo ausführen
+  python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_base --municipal-demo
+
+  # Interaktiver Chat
+  python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_base --chat
+
+  # Expert-Routing analysieren
+  python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_base --analyze-routing "Baugenehmigung"
+
+   Versuche es mit vollständigen Fragen im Format der Trainingsdaten:
+
+  # Teste mit vollständigen Fragen wie in den Trainingsdaten:
+  python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_trained_v2/best_model --prompt "Frage:
+  Ich möchte meinen Personalausweis verlängern. Was muss ich tun?"
+
+  # Oder:
+  python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_trained_v2/best_model --prompt "Wie
+  beantrage ich eine Geburtsurkunde?"
+
+  # Oder probiere den Municipal-Demo:
+  python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_trained_v2/best_model --municipal-demo
+
+  # Oder den interaktiven Chat:
+  python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_trained_v2/best_model --chat
+
+  Die Trainingsdaten verwenden das Format "Frage: ... Antwort: ...", daher funktioniert das Modell besser mit
+  vollständigen Fragen. Das zeigt, dass das Training grundsätzlich funktioniert - das Modell lernt die Muster aus
+  den Trainingsdaten!
+
+  Jetzt teste nochmal mit besseren Prompts, die dem Trainingsformat entsprechen:
+
+  # Teste mit vollständiger Frage-Antwort-Struktur:
+  python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_trained_v2/best_model --prompt "Frage:
+  Ich möchte meinen Personalausweis verlängern. Was muss ich tun?\nAntwort:"
+
+  # Oder noch besser - teste den Demo-Modus:
+  python3 municipal_tokenizer_integration.py --model-path ./municipal_moe_trained_v2/best_model --municipal-demo
+
+  Das Problem ist wahrscheinlich, dass das Modell den Prompt als "Frage:" erkennt, aber nicht weiß, dass es eine
+  "Antwort:" generieren soll. Versuche es mit dem "Antwort:"-Trigger am Ende!
+
 

@@ -1,0 +1,31 @@
+📊 Epoch 2 - Average loss: 0.0005
+✅ Municipal MoE model saved to municipal_moe_balanced/best_model
+🏆 New best model saved with loss: 0.0005
+
+💾 Saving final model to ./municipal_moe_balanced
+
+✅ Municipal MoE model saved to ./municipal_moe_balanced
+
+✅ Training completed! Model saved to ./municipal_moe_balanced
+
+🧪 Testing trained model with improved generation...
+
+📝 Prompt: Ich möchte meinen Personalausweis verlängern
+💬 Generated: b der Ablönnenantwort: Die Ummeldung ist bei dem Bürgerbüro ummeldung ist innerhalb von 14 Tagen.
+
+📝 Prompt: Wie beantrage ich eine Baugenehmigung
+💬 Generated: ?
+Für die Anmeldung: Die Ummeldung: Die Wohnsitzanmeldung ist bei dem Bürgerbüro möglich.
+
+📝 Prompt: Was kostet eine Geburtsurkunde
+💬 Generated: ich mich ummelden?
+dieinwort: Die Fristung erfolgt beim dem bürgerbüro innerhalb von 14 Tagen.
+
+📝 Prompt: Frage: Wo kann ich mich ummelden?
+💬 Generated: du köglich?
+Antwort: Die Ummeldung: Die Ummeldung ist bei dem Bürgerbüro möglich.
+root@ngmr64fpe8:/notebooks/LFM-Liquid-AI-Liquid-Foundation-Models/LFM_3B# echo "[Terminal 1]"
+[Terminal 1]
+root@ngmr64fpe8:/notebooks/LFM-Liquid-AI-Liquid-Foundation-Models/LFM_3B# echo "[Terminal 1]"
+[Terminal 1]
+root@ngmr64fpe8:/notebooks/LFM-Liquid-AI-Liquid-Foundation-Models/LFM_3B# 
