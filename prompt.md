@@ -411,5 +411,7 @@ Die wichtigsten Punkte zusammengefasst:
 
   Das Problem ist wahrscheinlich, dass das Modell den Prompt als "Frage:" erkennt, aber nicht weiß, dass es eine
   "Antwort:" generieren soll. Versuche es mit dem "Antwort:"-Trigger am Ende!
-
+git pull
+  https://github.com/estkae/LFM-Liquid-AI-Liquid-Foundation-Models.git
+  main
 
