@@ -1,0 +1,100 @@
+{"question": "Calculate 50 + 3", "answer": "53", "solution": "To solve 50 + 3:\n50 + 3 = 53", "difficulty": "easy"}
+{"question": "How many ways can you arrange 4 items from a set of 9 items?", "answer": "3024", "solution": "Permutations P(n,r) = n!/(n-r)!\nP(9,4) = 9!/(9-4)!\nP(9,4) = 9!/5!\nP(9,4) = 3024", "difficulty": "hard"}
+{"question": "How many ways can you arrange 5 items from a set of 10 items?", "answer": "30240", "solution": "Permutations P(n,r) = n!/(n-r)!\nP(10,5) = 10!/(10-5)!\nP(10,5) = 10!/5!\nP(10,5) = 30240", "difficulty": "hard"}
+{"question": "How many ways can you choose 4 items from a set of 6 items?", "answer": "15", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(6,4) = 6!/(4!×2!)\nC(6,4) = 15", "difficulty": "hard"}
+{"question": "How many ways can you choose 5 items from a set of 6 items?", "answer": "6", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(6,5) = 6!/(5!×1!)\nC(6,5) = 6", "difficulty": "hard"}
+{"question": "Calculate 30 - 13", "answer": "17", "solution": "To solve 30 - 13:\n30 - 13 = 17", "difficulty": "easy"}
+{"question": "Calculate 55 / 5", "answer": "11.0", "solution": "To solve 55 / 5:\n55 ÷ 5 = 11.0", "difficulty": "easy"}
+{"question": "Find the perimeter of a rectangle with length 20 and width 6.", "answer": "52", "solution": "Perimeter of rectangle = 2(length + width)\nPerimeter = 2(20 + 6) = 2 × 26 = 52 units", "difficulty": "medium"}
+{"question": "What is the probability of getting exactly 1 heads in 3 coin flips?", "answer": "3/8", "solution": "Using binomial probability:\nNumber of ways to get 1 heads in 3 flips = C(3,1) = 3\nTotal outcomes = 2^3 = 8\nProbability = 3/8 = 3/8", "difficulty": "hard"}
+{"question": "A store offers a 33% discount on an item priced at $96. What is the final price?", "answer": "64.32", "solution": "Final price = Original price × (1 - discount) = 96 × (1 - 33/100) = $64.32", "difficulty": "medium"}
+{"question": "Solve for x: 3x + -14 = -37", "answer": "-7.666666666666667", "solution": "To solve 3x + -14 = -37:\n1. Subtract -14 from both sides: 3x = -23\n2. Divide by 3: x = -23/3 = -7.666666666666667", "difficulty": "medium"}
+{"question": "How many ways can you choose 3 items from a set of 5 items?", "answer": "10", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(5,3) = 5!/(3!×2!)\nC(5,3) = 10", "difficulty": "hard"}
+{"question": "How many ways can you choose 5 items from a set of 9 items?", "answer": "126", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(9,5) = 9!/(5!×4!)\nC(9,5) = 126", "difficulty": "hard"}
+{"question": "Calculate 8!", "answer": "40320", "solution": "8! = 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 40320", "difficulty": "medium"}
+{"question": "A train travels 130 km/h for 5 hours. How far does it travel?", "answer": "650", "solution": "Distance = Speed × Time = 130 × 5 = 650 km", "difficulty": "medium"}
+{"question": "What is the probability of drawing a diamonds from a standard deck?", "answer": "1/4", "solution": "Standard deck has 52 cards\nEach suit has 13 cards\nProbability = 13/52 = 1/4", "difficulty": "hard"}
+{"question": "How many ways can you arrange 5 items from a set of 10 items?", "answer": "30240", "solution": "Permutations P(n,r) = n!/(n-r)!\nP(10,5) = 10!/(10-5)!\nP(10,5) = 10!/5!\nP(10,5) = 30240", "difficulty": "hard"}
+{"question": "A store offers a 18% discount on an item priced at $194. What is the final price?", "answer": "159.08", "solution": "Final price = Original price × (1 - discount) = 194 × (1 - 18/100) = $159.08", "difficulty": "medium"}
+{"question": "Find the integral of f(x) = 3x^1", "answer": "3x^2/2 + C", "solution": "Using power rule: ∫ax^n dx = a·x^(n+1)/(n+1) + C\n∫3x^1 dx = 3·x^(1+1)/(1+1) + C\n∫3x^1 dx = 3x^2/2 + C", "difficulty": "hard"}
+{"question": "Find the perimeter of a rectangle with length 5 and width 10.", "answer": "30", "solution": "Perimeter of rectangle = 2(length + width)\nPerimeter = 2(5 + 10) = 2 × 15 = 30 units", "difficulty": "medium"}
+{"question": "What is the probability of drawing a spades from a standard deck?", "answer": "1/4", "solution": "Standard deck has 52 cards\nEach suit has 13 cards\nProbability = 13/52 = 1/4", "difficulty": "hard"}
+{"question": "Find the perimeter of a square with side length 20.", "answer": "80", "solution": "Perimeter of square = 4 × side\nPerimeter = 4 × 20 = 80 units", "difficulty": "medium"}
+{"question": "Solve for x: x² + -4x + 20 = 0", "answer": "No real solutions", "solution": "The discriminant b² - 4ac = -64 < 0\nTherefore, there are no real solutions.", "difficulty": "medium"}
+{"question": "Find the integral of f(x) = 4x^4", "answer": "4x^5/5 + C", "solution": "Using power rule: ∫ax^n dx = a·x^(n+1)/(n+1) + C\n∫4x^4 dx = 4·x^(4+1)/(4+1) + C\n∫4x^4 dx = 4x^5/5 + C", "difficulty": "hard"}
+{"question": "Solve for x: x² + 0x + -9 = 0", "answer": "x₁ = 3.0, x₂ = -3.0", "solution": "Using the quadratic formula:\nx = (-b ± √(b² - 4ac)) / 2a\nx = (0 ± √(0² - 4(1)(-9))) / 2\nx = (0 ± √36) / 2\nx₁ = 3.0, x₂ = -3.0", "difficulty": "medium"}
+{"question": "How many ways can you choose 5 items from a set of 10 items?", "answer": "252", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(10,5) = 10!/(5!×5!)\nC(10,5) = 252", "difficulty": "hard"}
+{"question": "How many ways can you choose 2 items from a set of 7 items?", "answer": "21", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(7,2) = 7!/(2!×5!)\nC(7,2) = 21", "difficulty": "hard"}
+{"question": "Find the perimeter of a square with side length 9.", "answer": "36", "solution": "Perimeter of square = 4 × side\nPerimeter = 4 × 9 = 36 units", "difficulty": "medium"}
+{"question": "What is the probability of drawing a clubs from a standard deck?", "answer": "1/4", "solution": "Standard deck has 52 cards\nEach suit has 13 cards\nProbability = 13/52 = 1/4", "difficulty": "hard"}
+{"question": "Find the perimeter of a rectangle with length 12 and width 21.", "answer": "66", "solution": "Perimeter of rectangle = 2(length + width)\nPerimeter = 2(12 + 21) = 2 × 33 = 66 units", "difficulty": "medium"}
+{"question": "Solve for x: x² + -5x + 21 = 0", "answer": "No real solutions", "solution": "The discriminant b² - 4ac = -59 < 0\nTherefore, there are no real solutions.", "difficulty": "medium"}
+{"question": "What is the probability of getting exactly 3 heads in 5 coin flips?", "answer": "5/16", "solution": "Using binomial probability:\nNumber of ways to get 3 heads in 5 flips = C(5,3) = 10\nTotal outcomes = 2^5 = 32\nProbability = 10/32 = 5/16", "difficulty": "hard"}
+{"question": "Find the area of a circle with radius 14 units.", "answer": "615.75", "solution": "Area of circle = πr²\nArea = π × 14² = π × 196 ≈ 615.75 square units", "difficulty": "medium"}
+{"question": "Find the derivative of f(x) = 5x^4", "answer": "20x^3", "solution": "Using power rule: d/dx(ax^n) = n·a·x^(n-1)\nf'(x) = 4 · 5 · x^(4-1)\nf'(x) = 20x^3", "difficulty": "hard"}
+{"question": "Find the GCD of 16 and 43.", "answer": "1", "solution": "Using Euclidean algorithm:\n16 = 0 × 43 + 16\n43 = 2 × 16 + 11\n16 = 1 × 11 + 5\n11 = 2 × 5 + 1\n5 = 5 × 1 + 0\nGCD(16, 43) = 1", "difficulty": "medium"}
+{"question": "Find the area of a square with side length 8.", "answer": "64", "solution": "Area of square = side²\nArea = 8² = 64 square units", "difficulty": "medium"}
+{"question": "Find the GCD of 49 and 56.", "answer": "7", "solution": "Using Euclidean algorithm:\n49 = 0 × 56 + 49\n56 = 1 × 49 + 7\n49 = 7 × 7 + 0\nGCD(49, 56) = 7", "difficulty": "medium"}
+{"question": "Solve for x: 5x + 14 = -22", "answer": "-7.2", "solution": "To solve 5x + 14 = -22:\n1. Subtract 14 from both sides: 5x = -36\n2. Divide by 5: x = -36/5 = -7.2", "difficulty": "medium"}
+{"question": "What is the probability of drawing a spades from a standard deck?", "answer": "1/4", "solution": "Standard deck has 52 cards\nEach suit has 13 cards\nProbability = 13/52 = 1/4", "difficulty": "hard"}
+{"question": "Find the perimeter of a square with side length 18.", "answer": "72", "solution": "Perimeter of square = 4 × side\nPerimeter = 4 × 18 = 72 units", "difficulty": "medium"}
+{"question": "Find the integral of f(x) = 3x^3", "answer": "3x^4/4 + C", "solution": "Using power rule: ∫ax^n dx = a·x^(n+1)/(n+1) + C\n∫3x^3 dx = 3·x^(3+1)/(3+1) + C\n∫3x^3 dx = 3x^4/4 + C", "difficulty": "hard"}
+{"question": "Solve the system:\n2x + 2y = 13\n3x + 2y = 8", "answer": "x = -5.0, y = 11.5", "solution": "Using elimination method:\nMultiply first equation by 2 and second by 2:\n4x + 4y = 26\n6x + 4y = 16\nSubtract: -2x = 10\nTherefore: x = -5.0, y = 11.5", "difficulty": "medium"}
+{"question": "Find the LCM of 15 and 12.", "answer": "60", "solution": "LCM(a, b) = (a × b) / GCD(a, b)\nGCD(15, 12) = 3\nLCM(15, 12) = (15 × 12) / 3 = 180 / 3 = 60", "difficulty": "medium"}
+{"question": "Calculate 81 - 19", "answer": "62", "solution": "To solve 81 - 19:\n81 - 19 = 62", "difficulty": "easy"}
+{"question": "Solve the system:\n5x + 4y = 19\n1x + 3y = 8", "answer": "x = 2.272727272727273, y = 1.9090909090909092", "solution": "Using elimination method:\nMultiply first equation by 3 and second by 4:\n15x + 12y = 57\n4x + 12y = 32\nSubtract: 11x = 25\nTherefore: x = 2.272727272727273, y = 1.9090909090909092", "difficulty": "medium"}
+{"question": "Calculate 97 + 93", "answer": "190", "solution": "To solve 97 + 93:\n97 + 93 = 190", "difficulty": "easy"}
+{"question": "Find the GCD of 22 and 53.", "answer": "1", "solution": "Using Euclidean algorithm:\n22 = 0 × 53 + 22\n53 = 2 × 22 + 9\n22 = 2 × 9 + 4\n9 = 2 × 4 + 1\n4 = 4 × 1 + 0\nGCD(22, 53) = 1", "difficulty": "medium"}
+{"question": "Find the derivative of f(x) = 1x^4", "answer": "4x^3", "solution": "Using power rule: d/dx(ax^n) = n·a·x^(n-1)\nf'(x) = 4 · 1 · x^(4-1)\nf'(x) = 4x^3", "difficulty": "hard"}
+{"question": "What is the probability of drawing a spades from a standard deck?", "answer": "1/4", "solution": "Standard deck has 52 cards\nEach suit has 13 cards\nProbability = 13/52 = 1/4", "difficulty": "hard"}
+{"question": "Calculate 34 * 1", "answer": "34", "solution": "To solve 34 * 1:\n34 × 1 = 34", "difficulty": "easy"}
+{"question": "What is the probability of getting exactly 3 heads in 4 coin flips?", "answer": "1/4", "solution": "Using binomial probability:\nNumber of ways to get 3 heads in 4 flips = C(4,3) = 4\nTotal outcomes = 2^4 = 16\nProbability = 4/16 = 1/4", "difficulty": "hard"}
+{"question": "What is the probability of drawing a hearts from a standard deck?", "answer": "1/4", "solution": "Standard deck has 52 cards\nEach suit has 13 cards\nProbability = 13/52 = 1/4", "difficulty": "hard"}
+{"question": "Find the area of a square with side length 15.", "answer": "225", "solution": "Area of square = side²\nArea = 15² = 225 square units", "difficulty": "medium"}
+{"question": "What is the probability of getting exactly 1 heads in 3 coin flips?", "answer": "3/8", "solution": "Using binomial probability:\nNumber of ways to get 1 heads in 3 flips = C(3,1) = 3\nTotal outcomes = 2^3 = 8\nProbability = 3/8 = 3/8", "difficulty": "hard"}
+{"question": "Calculate 78 * 61", "answer": "4758", "solution": "To solve 78 * 61:\n78 × 61 = 4758", "difficulty": "easy"}
+{"question": "What is the probability of rolling a sum of 9 with 2 dice?", "answer": "1/9", "solution": "Total outcomes with 2 dice: 6^2 = 36\nFavorable outcomes (sum = 9): 4\nProbability = 4/36 = 1/9", "difficulty": "hard"}
+{"question": "Find the GCD of 32 and 12.", "answer": "4", "solution": "Using Euclidean algorithm:\n32 = 2 × 12 + 8\n12 = 1 × 8 + 4\n8 = 2 × 4 + 0\nGCD(32, 12) = 4", "difficulty": "medium"}
+{"question": "Calculate 2 * 19", "answer": "38", "solution": "To solve 2 * 19:\n2 × 19 = 38", "difficulty": "easy"}
+{"question": "Solve for x: x² + -7x + 9 = 0", "answer": "x₁ = 5.302775637731995, x₂ = 1.6972243622680054", "solution": "Using the quadratic formula:\nx = (-b ± √(b² - 4ac)) / 2a\nx = (7 ± √(-7² - 4(1)(9))) / 2\nx = (7 ± √13) / 2\nx₁ = 5.302775637731995, x₂ = 1.6972243622680054", "difficulty": "medium"}
+{"question": "Calculate 98 + 66", "answer": "164", "solution": "To solve 98 + 66:\n98 + 66 = 164", "difficulty": "easy"}
+{"question": "Find the area of a circle with radius 17 units.", "answer": "907.92", "solution": "Area of circle = πr²\nArea = π × 17² = π × 289 ≈ 907.92 square units", "difficulty": "medium"}
+{"question": "Find the GCD of 19 and 38.", "answer": "19", "solution": "Using Euclidean algorithm:\n19 = 0 × 38 + 19\n38 = 2 × 19 + 0\nGCD(19, 38) = 19", "difficulty": "medium"}
+{"question": "What is the probability of drawing a spades from a standard deck?", "answer": "1/4", "solution": "Standard deck has 52 cards\nEach suit has 13 cards\nProbability = 13/52 = 1/4", "difficulty": "hard"}
+{"question": "Find the LCM of 11 and 13.", "answer": "143", "solution": "LCM(a, b) = (a × b) / GCD(a, b)\nGCD(11, 13) = 1\nLCM(11, 13) = (11 × 13) / 1 = 143 / 1 = 143", "difficulty": "medium"}
+{"question": "Calculate 8!", "answer": "40320", "solution": "8! = 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 40320", "difficulty": "medium"}
+{"question": "Calculate 45 + 32", "answer": "77", "solution": "To solve 45 + 32:\n45 + 32 = 77", "difficulty": "easy"}
+{"question": "A right triangle has legs of length 7 and 6. Find the hypotenuse.", "answer": "9.22", "solution": "Using Pythagorean theorem: c² = a² + b²\nc² = 7² + 6² = 49 + 36 = 85\nc = √85 ≈ 9.22", "difficulty": "medium"}
+{"question": "Solve the system:\n3x + 2y = 11\n3x + 4y = 15", "answer": "x = 2.3333333333333335, y = 2.0", "solution": "Using elimination method:\nMultiply first equation by 4 and second by 2:\n12x + 8y = 44\n6x + 8y = 30\nSubtract: 6x = 14\nTherefore: x = 2.3333333333333335, y = 2.0", "difficulty": "medium"}
+{"question": "How many ways can you arrange 3 items from a set of 7 items?", "answer": "210", "solution": "Permutations P(n,r) = n!/(n-r)!\nP(7,3) = 7!/(7-3)!\nP(7,3) = 7!/4!\nP(7,3) = 210", "difficulty": "hard"}
+{"question": "Find the GCD of 36 and 39.", "answer": "3", "solution": "Using Euclidean algorithm:\n36 = 0 × 39 + 36\n39 = 1 × 36 + 3\n36 = 12 × 3 + 0\nGCD(36, 39) = 3", "difficulty": "medium"}
+{"question": "How many ways can you arrange 2 items from a set of 6 items?", "answer": "30", "solution": "Permutations P(n,r) = n!/(n-r)!\nP(6,2) = 6!/(6-2)!\nP(6,2) = 6!/4!\nP(6,2) = 30", "difficulty": "hard"}
+{"question": "Find the derivative of f(x) = 4x^5", "answer": "20x^4", "solution": "Using power rule: d/dx(ax^n) = n·a·x^(n-1)\nf'(x) = 5 · 4 · x^(5-1)\nf'(x) = 20x^4", "difficulty": "hard"}
+{"question": "Calculate 5!", "answer": "120", "solution": "5! = 5 × 4 × 3 × 2 × 1 = 120", "difficulty": "medium"}
+{"question": "Find the area of a circle with radius 7 units.", "answer": "153.94", "solution": "Area of circle = πr²\nArea = π × 7² = π × 49 ≈ 153.94 square units", "difficulty": "medium"}
+{"question": "If 7 workers can complete a job in 18 days, how many days would it take 13 workers?", "answer": "9.692307692307692", "solution": "Work = 7 × 18 = 126 worker-days\nTime for 13 workers = 126 ÷ 13 = 9.69 days", "difficulty": "medium"}
+{"question": "What is the probability of getting exactly 1 heads in 3 coin flips?", "answer": "3/8", "solution": "Using binomial probability:\nNumber of ways to get 1 heads in 3 flips = C(3,1) = 3\nTotal outcomes = 2^3 = 8\nProbability = 3/8 = 3/8", "difficulty": "hard"}
+{"question": "How many ways can you choose 3 items from a set of 5 items?", "answer": "10", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(5,3) = 5!/(3!×2!)\nC(5,3) = 10", "difficulty": "hard"}
+{"question": "Calculate 47 - 46", "answer": "1", "solution": "To solve 47 - 46:\n47 - 46 = 1", "difficulty": "easy"}
+{"question": "What is the probability of rolling a sum of 8 with 2 dice?", "answer": "5/36", "solution": "Total outcomes with 2 dice: 6^2 = 36\nFavorable outcomes (sum = 8): 5\nProbability = 5/36 = 5/36", "difficulty": "hard"}
+{"question": "Find the GCD of 15 and 37.", "answer": "1", "solution": "Using Euclidean algorithm:\n15 = 0 × 37 + 15\n37 = 2 × 15 + 7\n15 = 2 × 7 + 1\n7 = 7 × 1 + 0\nGCD(15, 37) = 1", "difficulty": "medium"}
+{"question": "A train travels 71 km/h for 8 hours. How far does it travel?", "answer": "568", "solution": "Distance = Speed × Time = 71 × 8 = 568 km", "difficulty": "medium"}
+{"question": "Find the LCM of 20 and 18.", "answer": "180", "solution": "LCM(a, b) = (a × b) / GCD(a, b)\nGCD(20, 18) = 2\nLCM(20, 18) = (20 × 18) / 2 = 360 / 2 = 180", "difficulty": "medium"}
+{"question": "Find the GCD of 39 and 12.", "answer": "3", "solution": "Using Euclidean algorithm:\n39 = 3 × 12 + 3\n12 = 4 × 3 + 0\nGCD(39, 12) = 3", "difficulty": "medium"}
+{"question": "Solve for x: 6x + 10 = -41", "answer": "-8.5", "solution": "To solve 6x + 10 = -41:\n1. Subtract 10 from both sides: 6x = -51\n2. Divide by 6: x = -51/6 = -8.5", "difficulty": "medium"}
+{"question": "Calculate 99 * 82", "answer": "8118", "solution": "To solve 99 * 82:\n99 × 82 = 8118", "difficulty": "easy"}
+{"question": "Find the area of a circle with radius 14 units.", "answer": "615.75", "solution": "Area of circle = πr²\nArea = π × 14² = π × 196 ≈ 615.75 square units", "difficulty": "medium"}
+{"question": "What is the probability of rolling a sum of 6 with 2 dice?", "answer": "5/36", "solution": "Total outcomes with 2 dice: 6^2 = 36\nFavorable outcomes (sum = 6): 5\nProbability = 5/36 = 5/36", "difficulty": "hard"}
+{"question": "Calculate 55 * 85", "answer": "4675", "solution": "To solve 55 * 85:\n55 × 85 = 4675", "difficulty": "easy"}
+{"question": "How many ways can you arrange 4 items from a set of 5 items?", "answer": "120", "solution": "Permutations P(n,r) = n!/(n-r)!\nP(5,4) = 5!/(5-4)!\nP(5,4) = 5!/1!\nP(5,4) = 120", "difficulty": "hard"}
+{"question": "Solve the system:\n2x + 2y = 9\n2x + 1y = 13", "answer": "x = 8.5, y = -4.0", "solution": "Using elimination method:\nMultiply first equation by 1 and second by 2:\n2x + 2y = 9\n4x + 2y = 26\nSubtract: -2x = -17\nTherefore: x = 8.5, y = -4.0", "difficulty": "medium"}
+{"question": "A store offers a 30% discount on an item priced at $24. What is the final price?", "answer": "16.799999999999997", "solution": "Final price = Original price × (1 - discount) = 24 × (1 - 30/100) = $16.80", "difficulty": "medium"}
+{"question": "A right triangle has legs of length 4 and 5. Find the hypotenuse.", "answer": "6.40", "solution": "Using Pythagorean theorem: c² = a² + b²\nc² = 4² + 5² = 16 + 25 = 41\nc = √41 ≈ 6.40", "difficulty": "medium"}
+{"question": "Calculate 16 - 28", "answer": "-12", "solution": "To solve 16 - 28:\n16 - 28 = -12", "difficulty": "easy"}
+{"question": "Calculate 57 / 19", "answer": "3.0", "solution": "To solve 57 / 19:\n57 ÷ 19 = 3.0", "difficulty": "easy"}
+{"question": "How many ways can you choose 5 items from a set of 6 items?", "answer": "6", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(6,5) = 6!/(5!×1!)\nC(6,5) = 6", "difficulty": "hard"}
+{"question": "How many ways can you choose 4 items from a set of 5 items?", "answer": "5", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(5,4) = 5!/(4!×1!)\nC(5,4) = 5", "difficulty": "hard"}
+{"question": "A right triangle has legs of length 12 and 10. Find the hypotenuse.", "answer": "15.62", "solution": "Using Pythagorean theorem: c² = a² + b²\nc² = 12² + 10² = 144 + 100 = 244\nc = √244 ≈ 15.62", "difficulty": "medium"}
+{"question": "Is 61 a prime number?", "answer": "Yes", "solution": "To check if 61 is prime, we test divisibility up to √61 ≈ 7\n61 is not divisible by any number from 2 to 7\nTherefore, 61 is prime.", "difficulty": "medium"}
+{"question": "Calculate 4!", "answer": "24", "solution": "4! = 4 × 3 × 2 × 1 = 24", "difficulty": "medium"}
+{"question": "Solve the system:\n5x + 3y = 15\n4x + 4y = 9", "answer": "x = 4.125, y = -1.875", "solution": "Using elimination method:\nMultiply first equation by 4 and second by 3:\n20x + 12y = 60\n12x + 12y = 27\nSubtract: 8x = 33\nTherefore: x = 4.125, y = -1.875", "difficulty": "medium"}

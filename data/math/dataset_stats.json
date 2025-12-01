@@ -1,0 +1,13 @@
+{
+  "total_problems": 1000,
+  "difficulty_distribution": {
+    "easy": 139,
+    "medium": 494,
+    "hard": 367
+  },
+  "splits": {
+    "train": 800,
+    "val": 100,
+    "test": 100
+  }
+}

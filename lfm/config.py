@@ -22,6 +22,15 @@ class LFMConfig:
     use_bias: bool = False
     tie_word_embeddings: bool = False
     
+    # RPT (Reinforcement Preference Training) parameters
+    rpt_enabled: bool = False
+    rpt_learning_rate: float = 1e-6
+    rpt_temperature: float = 0.8
+    rpt_num_samples: int = 8
+    rpt_entropy_threshold: float = 2.0
+    rpt_dynamic_sampling_start: int = 500
+    rpt_kl_penalty: float = 0.0
+    
     @property
     def total_params(self) -> int:
         """Calculate total parameters in billions"""

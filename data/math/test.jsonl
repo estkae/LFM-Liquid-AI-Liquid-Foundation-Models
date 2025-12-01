@@ -1,0 +1,100 @@
+{"question": "What is the probability of rolling a sum of 9 with 2 dice?", "answer": "1/9", "solution": "Total outcomes with 2 dice: 6^2 = 36\nFavorable outcomes (sum = 9): 4\nProbability = 4/36 = 1/9", "difficulty": "hard"}
+{"question": "Find the integral of f(x) = 4x^3", "answer": "1x^4 + C", "solution": "Using power rule: ∫ax^n dx = a·x^(n+1)/(n+1) + C\n∫4x^3 dx = 4·x^(3+1)/(3+1) + C\n∫4x^3 dx = 4x^4/4 + C = 1x^4 + C", "difficulty": "hard"}
+{"question": "A store offers a 14% discount on an item priced at $156. What is the final price?", "answer": "134.16", "solution": "Final price = Original price × (1 - discount) = 156 × (1 - 14/100) = $134.16", "difficulty": "medium"}
+{"question": "A train travels 130 km/h for 1 hours. How far does it travel?", "answer": "130", "solution": "Distance = Speed × Time = 130 × 1 = 130 km", "difficulty": "medium"}
+{"question": "If 5 workers can complete a job in 14 days, how many days would it take 8 workers?", "answer": "8.75", "solution": "Work = 5 × 14 = 70 worker-days\nTime for 8 workers = 70 ÷ 8 = 8.75 days", "difficulty": "medium"}
+{"question": "Find the area of a circle with radius 9 units.", "answer": "254.47", "solution": "Area of circle = πr²\nArea = π × 9² = π × 81 ≈ 254.47 square units", "difficulty": "medium"}
+{"question": "Find the derivative of f(x) = 4x^5", "answer": "20x^4", "solution": "Using power rule: d/dx(ax^n) = n·a·x^(n-1)\nf'(x) = 5 · 4 · x^(5-1)\nf'(x) = 20x^4", "difficulty": "hard"}
+{"question": "What is the probability of drawing a diamonds from a standard deck?", "answer": "1/4", "solution": "Standard deck has 52 cards\nEach suit has 13 cards\nProbability = 13/52 = 1/4", "difficulty": "hard"}
+{"question": "Find the area of a circle with radius 11 units.", "answer": "380.13", "solution": "Area of circle = πr²\nArea = π × 11² = π × 121 ≈ 380.13 square units", "difficulty": "medium"}
+{"question": "What is the probability of getting exactly 3 heads in 4 coin flips?", "answer": "1/4", "solution": "Using binomial probability:\nNumber of ways to get 3 heads in 4 flips = C(4,3) = 4\nTotal outcomes = 2^4 = 16\nProbability = 4/16 = 1/4", "difficulty": "hard"}
+{"question": "Is 33 a prime number?", "answer": "No", "solution": "To check if 33 is prime, we test divisibility\n33 = 3 × 11\nTherefore, 33 is not prime.", "difficulty": "medium"}
+{"question": "What is the probability of rolling a sum of 7 with 3 dice?", "answer": "Requires detailed enumeration", "solution": "With 3 dice, we need to count all ways to get sum 7\nThis is a complex calculation involving partitions.\nTotal outcomes = 6^3 = 216", "difficulty": "hard"}
+{"question": "A train travels 75 km/h for 4 hours. How far does it travel?", "answer": "300", "solution": "Distance = Speed × Time = 75 × 4 = 300 km", "difficulty": "medium"}
+{"question": "Calculate 196 / 14", "answer": "14.0", "solution": "To solve 196 / 14:\n196 ÷ 14 = 14.0", "difficulty": "easy"}
+{"question": "What is the probability of rolling a sum of 9 with 2 dice?", "answer": "1/9", "solution": "Total outcomes with 2 dice: 6^2 = 36\nFavorable outcomes (sum = 9): 4\nProbability = 4/36 = 1/9", "difficulty": "hard"}
+{"question": "Calculate 15 + 91", "answer": "106", "solution": "To solve 15 + 91:\n15 + 91 = 106", "difficulty": "easy"}
+{"question": "How many ways can you choose 2 items from a set of 10 items?", "answer": "45", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(10,2) = 10!/(2!×8!)\nC(10,2) = 45", "difficulty": "hard"}
+{"question": "Find the GCD of 38 and 60.", "answer": "2", "solution": "Using Euclidean algorithm:\n38 = 0 × 60 + 38\n60 = 1 × 38 + 22\n38 = 1 × 22 + 16\n22 = 1 × 16 + 6\n16 = 2 × 6 + 4\n6 = 1 × 4 + 2\n4 = 2 × 2 + 0\nGCD(38, 60) = 2", "difficulty": "medium"}
+{"question": "Calculate 26 + 17", "answer": "43", "solution": "To solve 26 + 17:\n26 + 17 = 43", "difficulty": "easy"}
+{"question": "Calculate 4!", "answer": "24", "solution": "4! = 4 × 3 × 2 × 1 = 24", "difficulty": "medium"}
+{"question": "Is 37 a prime number?", "answer": "Yes", "solution": "To check if 37 is prime, we test divisibility up to √37 ≈ 6\n37 is not divisible by any number from 2 to 6\nTherefore, 37 is prime.", "difficulty": "medium"}
+{"question": "Find the perimeter of a square with side length 13.", "answer": "52", "solution": "Perimeter of square = 4 × side\nPerimeter = 4 × 13 = 52 units", "difficulty": "medium"}
+{"question": "A train travels 68 km/h for 5 hours. How far does it travel?", "answer": "340", "solution": "Distance = Speed × Time = 68 × 5 = 340 km", "difficulty": "medium"}
+{"question": "Find the derivative of f(x) = 4x^4", "answer": "16x^3", "solution": "Using power rule: d/dx(ax^n) = n·a·x^(n-1)\nf'(x) = 4 · 4 · x^(4-1)\nf'(x) = 16x^3", "difficulty": "hard"}
+{"question": "Calculate 69 - 22", "answer": "47", "solution": "To solve 69 - 22:\n69 - 22 = 47", "difficulty": "easy"}
+{"question": "How many ways can you choose 3 items from a set of 5 items?", "answer": "10", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(5,3) = 5!/(3!×2!)\nC(5,3) = 10", "difficulty": "hard"}
+{"question": "Find the derivative of f(x) = 5x^4", "answer": "20x^3", "solution": "Using power rule: d/dx(ax^n) = n·a·x^(n-1)\nf'(x) = 4 · 5 · x^(4-1)\nf'(x) = 20x^3", "difficulty": "hard"}
+{"question": "Calculate 59 + 94", "answer": "153", "solution": "To solve 59 + 94:\n59 + 94 = 153", "difficulty": "easy"}
+{"question": "What is the probability of getting exactly 3 heads in 5 coin flips?", "answer": "5/16", "solution": "Using binomial probability:\nNumber of ways to get 3 heads in 5 flips = C(5,3) = 10\nTotal outcomes = 2^5 = 32\nProbability = 10/32 = 5/16", "difficulty": "hard"}
+{"question": "How many ways can you arrange 5 items from a set of 10 items?", "answer": "30240", "solution": "Permutations P(n,r) = n!/(n-r)!\nP(10,5) = 10!/(10-5)!\nP(10,5) = 10!/5!\nP(10,5) = 30240", "difficulty": "hard"}
+{"question": "What is the probability of getting exactly 4 heads in 5 coin flips?", "answer": "5/32", "solution": "Using binomial probability:\nNumber of ways to get 4 heads in 5 flips = C(5,4) = 5\nTotal outcomes = 2^5 = 32\nProbability = 5/32 = 5/32", "difficulty": "hard"}
+{"question": "Find the area of a circle with radius 14 units.", "answer": "615.75", "solution": "Area of circle = πr²\nArea = π × 14² = π × 196 ≈ 615.75 square units", "difficulty": "medium"}
+{"question": "A store offers a 23% discount on an item priced at $23. What is the final price?", "answer": "17.71", "solution": "Final price = Original price × (1 - discount) = 23 × (1 - 23/100) = $17.71", "difficulty": "medium"}
+{"question": "A right triangle has legs of length 6 and 7. Find the hypotenuse.", "answer": "9.22", "solution": "Using Pythagorean theorem: c² = a² + b²\nc² = 6² + 7² = 36 + 49 = 85\nc = √85 ≈ 9.22", "difficulty": "medium"}
+{"question": "What is the probability of getting exactly 1 heads in 3 coin flips?", "answer": "3/8", "solution": "Using binomial probability:\nNumber of ways to get 1 heads in 3 flips = C(3,1) = 3\nTotal outcomes = 2^3 = 8\nProbability = 3/8 = 3/8", "difficulty": "hard"}
+{"question": "A train travels 56 km/h for 6 hours. How far does it travel?", "answer": "336", "solution": "Distance = Speed × Time = 56 × 6 = 336 km", "difficulty": "medium"}
+{"question": "Find the GCD of 12 and 53.", "answer": "1", "solution": "Using Euclidean algorithm:\n12 = 0 × 53 + 12\n53 = 4 × 12 + 5\n12 = 2 × 5 + 2\n5 = 2 × 2 + 1\n2 = 2 × 1 + 0\nGCD(12, 53) = 1", "difficulty": "medium"}
+{"question": "Calculate 83 - 40", "answer": "43", "solution": "To solve 83 - 40:\n83 - 40 = 43", "difficulty": "easy"}
+{"question": "What is the probability of drawing a diamonds from a standard deck?", "answer": "1/4", "solution": "Standard deck has 52 cards\nEach suit has 13 cards\nProbability = 13/52 = 1/4", "difficulty": "hard"}
+{"question": "Calculate 16 / 2", "answer": "8.0", "solution": "To solve 16 / 2:\n16 ÷ 2 = 8.0", "difficulty": "easy"}
+{"question": "Calculate 17 - 13", "answer": "4", "solution": "To solve 17 - 13:\n17 - 13 = 4", "difficulty": "easy"}
+{"question": "A right triangle has legs of length 9 and 9. Find the hypotenuse.", "answer": "12.73", "solution": "Using Pythagorean theorem: c² = a² + b²\nc² = 9² + 9² = 81 + 81 = 162\nc = √162 ≈ 12.73", "difficulty": "medium"}
+{"question": "Find the perimeter of a square with side length 9.", "answer": "36", "solution": "Perimeter of square = 4 × side\nPerimeter = 4 × 9 = 36 units", "difficulty": "medium"}
+{"question": "Find the LCM of 6 and 8.", "answer": "24", "solution": "LCM(a, b) = (a × b) / GCD(a, b)\nGCD(6, 8) = 2\nLCM(6, 8) = (6 × 8) / 2 = 48 / 2 = 24", "difficulty": "medium"}
+{"question": "Calculate 5!", "answer": "120", "solution": "5! = 5 × 4 × 3 × 2 × 1 = 120", "difficulty": "medium"}
+{"question": "Find the perimeter of a rectangle with length 16 and width 15.", "answer": "62", "solution": "Perimeter of rectangle = 2(length + width)\nPerimeter = 2(16 + 15) = 2 × 31 = 62 units", "difficulty": "medium"}
+{"question": "Calculate 6!", "answer": "720", "solution": "6! = 6 × 5 × 4 × 3 × 2 × 1 = 720", "difficulty": "medium"}
+{"question": "A train travels 127 km/h for 4 hours. How far does it travel?", "answer": "508", "solution": "Distance = Speed × Time = 127 × 4 = 508 km", "difficulty": "medium"}
+{"question": "If 5 workers can complete a job in 10 days, how many days would it take 15 workers?", "answer": "3.3333333333333335", "solution": "Work = 5 × 10 = 50 worker-days\nTime for 15 workers = 50 ÷ 15 = 3.33 days", "difficulty": "medium"}
+{"question": "Find the area of a square with side length 20.", "answer": "400", "solution": "Area of square = side²\nArea = 20² = 400 square units", "difficulty": "medium"}
+{"question": "A right triangle has legs of length 15 and 13. Find the hypotenuse.", "answer": "19.85", "solution": "Using Pythagorean theorem: c² = a² + b²\nc² = 15² + 13² = 225 + 169 = 394\nc = √394 ≈ 19.85", "difficulty": "medium"}
+{"question": "Find the derivative of f(x) = 5x^2", "answer": "10x^1", "solution": "Using power rule: d/dx(ax^n) = n·a·x^(n-1)\nf'(x) = 2 · 5 · x^(2-1)\nf'(x) = 10x^1", "difficulty": "hard"}
+{"question": "What is the probability of rolling a sum of 10 with 3 dice?", "answer": "Requires detailed enumeration", "solution": "With 3 dice, we need to count all ways to get sum 10\nThis is a complex calculation involving partitions.\nTotal outcomes = 6^3 = 216", "difficulty": "hard"}
+{"question": "What is the probability of rolling a sum of 4 with 2 dice?", "answer": "1/12", "solution": "Total outcomes with 2 dice: 6^2 = 36\nFavorable outcomes (sum = 4): 3\nProbability = 3/36 = 1/12", "difficulty": "hard"}
+{"question": "Calculate 36 + 76", "answer": "112", "solution": "To solve 36 + 76:\n36 + 76 = 112", "difficulty": "easy"}
+{"question": "Calculate 17 * 92", "answer": "1564", "solution": "To solve 17 * 92:\n17 × 92 = 1564", "difficulty": "easy"}
+{"question": "Find the derivative of f(x) = 4x^3", "answer": "12x^2", "solution": "Using power rule: d/dx(ax^n) = n·a·x^(n-1)\nf'(x) = 3 · 4 · x^(3-1)\nf'(x) = 12x^2", "difficulty": "hard"}
+{"question": "Calculate 82 + 63", "answer": "145", "solution": "To solve 82 + 63:\n82 + 63 = 145", "difficulty": "easy"}
+{"question": "Solve the system:\n1x + 4y = 15\n5x + 2y = 13", "answer": "x = 1.2222222222222223, y = 3.4444444444444446", "solution": "Using elimination method:\nMultiply first equation by 2 and second by 4:\n2x + 8y = 30\n20x + 8y = 52\nSubtract: -18x = -22\nTherefore: x = 1.2222222222222223, y = 3.4444444444444446", "difficulty": "medium"}
+{"question": "Find the integral of f(x) = 3x^1", "answer": "3x^2/2 + C", "solution": "Using power rule: ∫ax^n dx = a·x^(n+1)/(n+1) + C\n∫3x^1 dx = 3·x^(1+1)/(1+1) + C\n∫3x^1 dx = 3x^2/2 + C", "difficulty": "hard"}
+{"question": "What is the probability of rolling a sum of 10 with 3 dice?", "answer": "Requires detailed enumeration", "solution": "With 3 dice, we need to count all ways to get sum 10\nThis is a complex calculation involving partitions.\nTotal outcomes = 6^3 = 216", "difficulty": "hard"}
+{"question": "Solve the system:\n2x + 5y = 5\n4x + 2y = 5", "answer": "x = 0.9375, y = 0.625", "solution": "Using elimination method:\nMultiply first equation by 2 and second by 5:\n4x + 10y = 10\n20x + 10y = 25\nSubtract: -16x = -15\nTherefore: x = 0.9375, y = 0.625", "difficulty": "medium"}
+{"question": "Calculate 8!", "answer": "40320", "solution": "8! = 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 = 40320", "difficulty": "medium"}
+{"question": "What is the probability of drawing a clubs from a standard deck?", "answer": "1/4", "solution": "Standard deck has 52 cards\nEach suit has 13 cards\nProbability = 13/52 = 1/4", "difficulty": "hard"}
+{"question": "Find the GCD of 27 and 26.", "answer": "1", "solution": "Using Euclidean algorithm:\n27 = 1 × 26 + 1\n26 = 26 × 1 + 0\nGCD(27, 26) = 1", "difficulty": "medium"}
+{"question": "What is the probability of rolling a sum of 15 with 3 dice?", "answer": "Requires detailed enumeration", "solution": "With 3 dice, we need to count all ways to get sum 15\nThis is a complex calculation involving partitions.\nTotal outcomes = 6^3 = 216", "difficulty": "hard"}
+{"question": "What is the probability of getting exactly 1 heads in 3 coin flips?", "answer": "3/8", "solution": "Using binomial probability:\nNumber of ways to get 1 heads in 3 flips = C(3,1) = 3\nTotal outcomes = 2^3 = 8\nProbability = 3/8 = 3/8", "difficulty": "hard"}
+{"question": "How many ways can you choose 3 items from a set of 9 items?", "answer": "84", "solution": "Combinations C(n,r) = n!/(r!(n-r)!)\nC(9,3) = 9!/(3!×6!)\nC(9,3) = 84", "difficulty": "hard"}
+{"question": "If 5 workers can complete a job in 9 days, how many days would it take 8 workers?", "answer": "5.625", "solution": "Work = 5 × 9 = 45 worker-days\nTime for 8 workers = 45 ÷ 8 = 5.62 days", "difficulty": "medium"}
+{"question": "A train travels 145 km/h for 4 hours. How far does it travel?", "answer": "580", "solution": "Distance = Speed × Time = 145 × 4 = 580 km", "difficulty": "medium"}
+{"question": "Solve for x: x² + -10x + 6 = 0", "answer": "x₁ = 9.358898943540673, x₂ = 0.641101056459326", "solution": "Using the quadratic formula:\nx = (-b ± √(b² - 4ac)) / 2a\nx = (10 ± √(-10² - 4(1)(6))) / 2\nx = (10 ± √76) / 2\nx₁ = 9.358898943540673, x₂ = 0.641101056459326", "difficulty": "medium"}
+{"question": "Calculate 49 * 72", "answer": "3528", "solution": "To solve 49 * 72:\n49 × 72 = 3528", "difficulty": "easy"}
+{"question": "Calculate 43 + 63", "answer": "106", "solution": "To solve 43 + 63:\n43 + 63 = 106", "difficulty": "easy"}
+{"question": "Solve for x: 9x + -17 = -44", "answer": "-3.0", "solution": "To solve 9x + -17 = -44:\n1. Subtract -17 from both sides: 9x = -27\n2. Divide by 9: x = -27/9 = -3.0", "difficulty": "medium"}
+{"question": "Find the perimeter of a rectangle with length 8 and width 23.", "answer": "62", "solution": "Perimeter of rectangle = 2(length + width)\nPerimeter = 2(8 + 23) = 2 × 31 = 62 units", "difficulty": "medium"}
+{"question": "Calculate 13 - 91", "answer": "-78", "solution": "To solve 13 - 91:\n13 - 91 = -78", "difficulty": "easy"}
+{"question": "Find the perimeter of a rectangle with length 19 and width 30.", "answer": "98", "solution": "Perimeter of rectangle = 2(length + width)\nPerimeter = 2(19 + 30) = 2 × 49 = 98 units", "difficulty": "medium"}
+{"question": "What is the probability of rolling a sum of 15 with 3 dice?", "answer": "Requires detailed enumeration", "solution": "With 3 dice, we need to count all ways to get sum 15\nThis is a complex calculation involving partitions.\nTotal outcomes = 6^3 = 216", "difficulty": "hard"}
+{"question": "Find the area of a square with side length 9.", "answer": "81", "solution": "Area of square = side²\nArea = 9² = 81 square units", "difficulty": "medium"}
+{"question": "Is 93 a prime number?", "answer": "No", "solution": "To check if 93 is prime, we test divisibility\n93 = 3 × 31\nTherefore, 93 is not prime.", "difficulty": "medium"}
+{"question": "What is the probability of getting exactly 2 heads in 4 coin flips?", "answer": "3/8", "solution": "Using binomial probability:\nNumber of ways to get 2 heads in 4 flips = C(4,2) = 6\nTotal outcomes = 2^4 = 16\nProbability = 6/16 = 3/8", "difficulty": "hard"}
+{"question": "Find the integral of f(x) = 2x^4", "answer": "2x^5/5 + C", "solution": "Using power rule: ∫ax^n dx = a·x^(n+1)/(n+1) + C\n∫2x^4 dx = 2·x^(4+1)/(4+1) + C\n∫2x^4 dx = 2x^5/5 + C", "difficulty": "hard"}
+{"question": "Calculate 15 * 26", "answer": "390", "solution": "To solve 15 * 26:\n15 × 26 = 390", "difficulty": "easy"}
+{"question": "Solve for x: x² + 6x + 11 = 0", "answer": "No real solutions", "solution": "The discriminant b² - 4ac = -8 < 0\nTherefore, there are no real solutions.", "difficulty": "medium"}
+{"question": "If 4 workers can complete a job in 8 days, how many days would it take 11 workers?", "answer": "2.909090909090909", "solution": "Work = 4 × 8 = 32 worker-days\nTime for 11 workers = 32 ÷ 11 = 2.91 days", "difficulty": "medium"}
+{"question": "A store offers a 33% discount on an item priced at $45. What is the final price?", "answer": "30.15", "solution": "Final price = Original price × (1 - discount) = 45 × (1 - 33/100) = $30.15", "difficulty": "medium"}
+{"question": "Is 32 a prime number?", "answer": "No", "solution": "To check if 32 is prime, we test divisibility\n32 = 2 × 16\nTherefore, 32 is not prime.", "difficulty": "medium"}
+{"question": "What is the probability of getting exactly 4 heads in 5 coin flips?", "answer": "5/32", "solution": "Using binomial probability:\nNumber of ways to get 4 heads in 5 flips = C(5,4) = 5\nTotal outcomes = 2^5 = 32\nProbability = 5/32 = 5/32", "difficulty": "hard"}
+{"question": "Find the area of a square with side length 8.", "answer": "64", "solution": "Area of square = side²\nArea = 8² = 64 square units", "difficulty": "medium"}
+{"question": "How many ways can you arrange 3 items from a set of 9 items?", "answer": "504", "solution": "Permutations P(n,r) = n!/(n-r)!\nP(9,3) = 9!/(9-3)!\nP(9,3) = 9!/6!\nP(9,3) = 504", "difficulty": "hard"}
+{"question": "What is the probability of rolling a sum of 4 with 2 dice?", "answer": "1/12", "solution": "Total outcomes with 2 dice: 6^2 = 36\nFavorable outcomes (sum = 4): 3\nProbability = 3/36 = 1/12", "difficulty": "hard"}
+{"question": "Calculate 22 / 11", "answer": "2.0", "solution": "To solve 22 / 11:\n22 ÷ 11 = 2.0", "difficulty": "easy"}
+{"question": "Find the perimeter of a rectangle with length 26 and width 23.", "answer": "98", "solution": "Perimeter of rectangle = 2(length + width)\nPerimeter = 2(26 + 23) = 2 × 49 = 98 units", "difficulty": "medium"}
+{"question": "Solve for x: 7x + -7 = -30", "answer": "-3.2857142857142856", "solution": "To solve 7x + -7 = -30:\n1. Subtract -7 from both sides: 7x = -23\n2. Divide by 7: x = -23/7 = -3.2857142857142856", "difficulty": "medium"}
+{"question": "Find the integral of f(x) = 3x^1", "answer": "3x^2/2 + C", "solution": "Using power rule: ∫ax^n dx = a·x^(n+1)/(n+1) + C\n∫3x^1 dx = 3·x^(1+1)/(1+1) + C\n∫3x^1 dx = 3x^2/2 + C", "difficulty": "hard"}
+{"question": "What is the probability of rolling a sum of 5 with 2 dice?", "answer": "1/9", "solution": "Total outcomes with 2 dice: 6^2 = 36\nFavorable outcomes (sum = 5): 4\nProbability = 4/36 = 1/9", "difficulty": "hard"}
+{"question": "A train travels 56 km/h for 7 hours. How far does it travel?", "answer": "392", "solution": "Distance = Speed × Time = 56 × 7 = 392 km", "difficulty": "medium"}
+{"question": "Find the area of a circle with radius 3 units.", "answer": "28.27", "solution": "Area of circle = πr²\nArea = π × 3² = π × 9 ≈ 28.27 square units", "difficulty": "medium"}
+{"question": "Find the area of a circle with radius 9 units.", "answer": "254.47", "solution": "Area of circle = πr²\nArea = π × 9² = π × 81 ≈ 254.47 square units", "difficulty": "medium"}
+{"question": "Find the perimeter of a rectangle with length 22 and width 30.", "answer": "104", "solution": "Perimeter of rectangle = 2(length + width)\nPerimeter = 2(22 + 30) = 2 × 52 = 104 units", "difficulty": "medium"}
